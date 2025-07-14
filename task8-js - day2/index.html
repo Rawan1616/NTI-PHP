@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>حاسبة التقدير</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>Rawan salehh</h1>
+
+  <input type="number" id="gradeInput" placeholder="أدخل درجتك من 0 إلى 100" min="0" max="100" />
+  <br>
+  <button onclick="calculateGrade()">احسب التقدير</button>
+
+  <div id="result"></div>
+
+  <script>
+    function calculateGrade() {
+      const grade = parseFloat(document.getElementById('gradeInput').value);
+      const resultDiv = document.getElementById('result');
+
+      let message = "";
+
+      if (grade >= 85 && grade <= 100) {
+        message = "تقديرك: ممتاز ";
+      } else if (grade >= 75) {
+        message = "تقديرك: جيد جدًا ";
+      } else if (grade >= 60) {
+        message = "تقديرك: جيد ";
+      } else if (grade >= 0) {
+        message = "تقديرك: ضعيف ";
+      } else {
+        message = "الرجاء إدخال درجة صحيحة بين 0 و100.";
+      }
+
+      resultDiv.innerHTML = message;
+      resultDiv.style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
