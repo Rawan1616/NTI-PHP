@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>تمرين JavaScript</title>
+  <style>
+    body {
+      font-family: 'Cairo', sans-serif;
+      text-align: center;
+      padding: 50px;
+      background-color: #f0f0f0;
+      transition: background-color 0.5s;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      display: inline-block;
+    }
+
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1 id="main-title">مرحباً</h1>
+    <button onclick="changeTitle()">غيّر العنوان</button>
+    <button onclick="changeBackground()">غيّر الخلفية</button>
+  </div>
+
+  <script>
+    function changeTitle() {
+      document.getElementById("main-title").textContent = "أهلاً بك في الجافاسكربت";
+    }
+
+    function changeBackground() {
+    
+      const colors = ["#d4edda", "#f8d7da", "#fff3cd", "#cce5ff"];
+      const randomColor = colors[Math.floor(Math.random() * colors.length)];
+      document.body.style.backgroundColor = randomColor;
+    }
+  </script>
+
+</body>
+</html>
