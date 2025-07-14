@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>نتيجة الطالب</title>
+  <style>
+    body {
+      font-family: 'Cairo', sans-serif;
+      text-align: center;
+      background-color: #f8f9fa;
+      padding: 50px;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      display: inline-block;
+    }
+
+    input {
+      padding: 10px;
+      font-size: 16px;
+      margin-bottom: 10px;
+      width: 200px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    #typing, #result {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>أدخل اسمك</h2>
+    <input type="text" id="studentName" placeholder="اكتب اسمك" oninput="showTyping()">
+    <br>
+    <button onclick="showResult()">أظهر النتيجة</button>
+
+    <div id="typing"></div>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function showTyping() {
+      const name = document.getElementById("studentName").value;
+      const typingDiv = document.getElementById("typing");
+      if (name) {
+        typingDiv.textContent = "أنت تكتب الآن: " + name;
+      } else {
+        typingDiv.textContent = "";
+      }
+    }
+
+    function showResult() {
+      const name = document.getElementById("studentName").value;
+      const resultDiv = document.getElementById("result");
+      if (name.trim() !== "") {
+        resultDiv.textContent = "مرحباً يا " + name + "، نتيجتك = 90%";
+      } else {
+        resultDiv.textContent = "من فضلك أدخل اسمك أولاً.";
+      }
+    }
+  </script>
+
+</body>
+</html>
