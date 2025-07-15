@@ -15,6 +15,10 @@
         echo "The sum of $n1 and $n2 is $n3 <br>";
         echo "The division of $n1 and $n2 is $n4 <br >";
 
+         $score = 50 ;
+         
         ?>
+    
+     
 </body>
 </html>
